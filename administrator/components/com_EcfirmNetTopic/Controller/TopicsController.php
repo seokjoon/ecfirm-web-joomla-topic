@@ -5,7 +5,7 @@
  * @license GNU General Public License version 2 or later.
  */
 
-namespace Joomla\Component\Tvprod\Administrator\Controller;
+namespace Joomla\Component\EcfirmNetTopic\Administrator\Controller;
 
 use Joomla\Component\EcfirmNetBase\Administrator\Controller\EcListAdminController;
 
