@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+
+	<layout title="COM_ECFIRMNETTOPIC_TOPICS_VIEW_DEFAULT_TITLE"
+		option="COM_ECFIRMNETTOPIC_TOPICS_VIEW_DEFAULT_DESC">
+		<help key="" />
+		<message><![CDATA[COM_ECFIRMNETTOPIC_TOPICS_VIEW_DEFAULT_DESC]]></message>
+	</layout>
+
+	<fields name="request">
+		<fieldset name="request"
+			addfieldpath="/administrator/components/com_EcfirmNetTopic/models/fields">
+			<field name="topiccat" type="topiccat"
+				label="COM_ECFIRMNETTOPIC_TOPICS_VIEW_DEFAULT_TOPICCAT_LABEL"
+				edit="true" clear="false"
+				description="COM_ECFIRMNETTOPIC_TOPICS_VIEW_DEFAULT_TOPICCAT_DESC" />
+		</fieldset>
+	</fields>
+
+	<fields>
+		<fieldset name="params" label="COM_ECFIRMNETTOPIC_TOPICS_PARAMS">
+		</fieldset>
+	</fields>
+
+</metadata>

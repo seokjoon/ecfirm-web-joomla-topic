@@ -5,7 +5,7 @@
  * @license GNU General Public License version 2 or later.
  */
 
-namespace Joomla\Component\EcfirmNetTopic\Administrator\View\Prod;
+namespace Joomla\Component\EcfirmNetTopic\Administrator\View\Topic;
 
 defined('_JEXEC') or die;
 

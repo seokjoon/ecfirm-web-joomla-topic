@@ -5,12 +5,13 @@
  * @license GNU General Public License version 2 or later.
  */
 
-namespace Joomla\Component\EcfirmNetTopic\Administrator\View\Topics;
+namespace Joomla\Component\EcfirmNetTopic\Site\View\Topic;
 
 defined('_JEXEC') or die;
 
-use Joomla\Component\EcfirmNetBase\Administrator\View\EcListAdminHtmlView;
+use Joomla\Component\EcfirmNetBase\Site\View\EcItemHtmlView;
 
-class HtmlView extends EcListAdminHtmlView
+class HtmlView extends EcItemHtmlView
 {
+
 }

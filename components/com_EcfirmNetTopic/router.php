@@ -5,12 +5,10 @@
  * @license GNU General Public License version 2 or later.
  */
 
-namespace Joomla\Component\EcfirmNetTopic\Administrator\View\Topics;
+use Joomla\CMS\Component\Router\RouterView;
 
 defined('_JEXEC') or die;
 
-use Joomla\Component\EcfirmNetBase\Administrator\View\EcListAdminHtmlView;
-
-class HtmlView extends EcListAdminHtmlView
+class EcfirmNetTopicRouter extends RouterView
 {
 }
