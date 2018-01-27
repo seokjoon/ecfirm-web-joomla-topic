@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="component" version="3.8" method="upgrade">
+	<name>COM_ECFIRMNETTOPIC</name>
+	<creationDate>2018-01-27</creationDate>
+	<author>Seok Joon Lee</author>
+	<authorEmail>seokjoon@gmail.com</authorEmail>
+	<authorUrl>http://ecfirm.net/</authorUrl>
+	<copyright>Copyright (C) ecfirm.net. All rights reserved.</copyright>
+	<license>License GNU General Public License version 2 or later</license>
+	<version>4.0</version>
+	<description>COM_ECFIRMNETTOPIC_XML_DESCRIPTION</description>
+
+	<!-- Scripts to run on installation -->
+	<scriptfile>script.php</scriptfile>
+
+	<!-- Runs on install -->
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install/mysql/mysql.sql</file>
+		</sql>
+	</install>
+
+	<!-- Runs on update -->
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<!-- Media files -->
+	<media folder="media/com_EcfirmNetTopic" destination="com_EcfirmNetTopic">
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+	</media>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.com_EcfirmNetTopic.ini</language>
+	</languages>
+
+	<!-- Front-end files -->
+	<files folder="components/com_EcfirmNetTopic">
+		<filename>index.html</filename>
+		<filename>router.php</filename>
+		<filename>dispatcher.php</filename>
+		<folder>Controller</folder>
+		<folder>forms</folder>
+		<folder>helpers</folder>
+		<folder>Model</folder>
+		<folder>Rule</folder>
+		<folder>tmpl</folder>
+		<folder>View</folder>
+	</files>
+
+	<!-- Back-end files -->
+	<administration>
+		<!-- Menu entries -->
+		<menu view="EcfirmNetTopic">COM_ECFIRMNETTOPIC</menu>
+		<submenu>
+			<!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+			<menu link="option=com_EcfirmNetTopic">COM_ECFIRMNETTOPIC</menu>
+		</submenu>
+
+		<!-- Core files -->
+		<files folder="administrator/components/com_EcfirmNetTopic">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>dispatcher.php</filename>
+			<filename>index.html</filename>
+			<folder>Controller</folder>
+			<folder>Field</folder>
+			<folder>forms</folder>
+			<folder>Helper</folder>
+			<folder>helpers</folder>
+			<folder>Model</folder>
+			<folder>sql</folder>
+			<folder>Table</folder>
+			<folder>tmpl</folder>
+			<folder>View</folder>
+		</files>
+		<languages folder="administrator/language">
+			<language tag="en-GB">en-GB/en-GB.com_EcfirmNetTopic.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_EcfirmNetTopic.sys.ini</language>
+		</languages>
+	</administration>
+
+	<!-- Update servers -->
+	<updateservers>
+		<server type="extension" priority="1" name="EcfirmNetTopic">https://ecfirm.net/EcfirmNetTopic.xml</server>
+	</updateservers>
+</extension>
