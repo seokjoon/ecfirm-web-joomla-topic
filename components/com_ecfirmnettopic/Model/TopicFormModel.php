@@ -5,6 +5,13 @@
  * @license GNU General Public License version 2 or later.
  */
 
-use Joomla\Component\EcfirmNetBase\Site\Helper\EcDebug;
+namespace Joomla\Component\EcfirmNetBase\Site\View;
+
+use Joomla\Component\EcfirmNetBase\Site\Model\EcFormModel;
 
 defined('_JEXEC') or die;
+
+class TopicFormModel extends EcFormModel
+{
+
+}

@@ -13,5 +13,4 @@ defined('_JEXEC') or die;
 
 class DisplayController extends EcDisplayController
 {
-
 }

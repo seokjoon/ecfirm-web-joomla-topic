@@ -7,11 +7,10 @@
 
 namespace Joomla\Component\EcfirmNetTopic\Site\Controller;
 
-use Joomla\Component\EcfirmNetBase\Site\Controller\EcListController;
+use Joomla\Component\EcfirmNetBase\Site\Controller\EcController;
 
 defined('_JEXEC') or die;
 
-class TopicsController extends EcListController
+class TopicsController extends EcController
 {
-
 }
