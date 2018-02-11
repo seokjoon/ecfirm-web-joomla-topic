@@ -28,18 +28,18 @@
 	</update>
 
 	<!-- Media files -->
-	<media folder="media/com_EcfirmNetTopic" destination="com_EcfirmNetTopic">
+	<media folder="media/com_ecfirmnettopic" destination="com_ecfirmnettopic">
 		<folder>css</folder>
 		<folder>images</folder>
 		<folder>js</folder>
 	</media>
 
 	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.com_EcfirmNetTopic.ini</language>
+		<language tag="en-GB">en-GB/en-GB.com_ecfirmnettopic.ini</language>
 	</languages>
 
 	<!-- Front-end files -->
-	<files folder="components/com_EcfirmNetTopic">
+	<files folder="components/com_ecfirmnettopic">
 		<filename>index.html</filename>
 		<filename>router.php</filename>
 		<filename>dispatcher.php</filename>
@@ -55,17 +55,17 @@
 	<!-- Back-end files -->
 	<administration>
 		<!-- Menu entries -->
-		<menu view="EcfirmNetTopic">COM_ECFIRMNETTOPIC</menu>
+		<menu view="ecfirmnettopic">COM_ECFIRMNETTOPIC</menu>
 		<submenu>
 			<!--
 				Note that all & must be escaped to &amp; for the file to be valid
 				XML and be parsed by the installer
 			-->
-			<menu link="option=com_EcfirmNetTopic">COM_ECFIRMNETTOPIC</menu>
+			<menu link="option=com_ecfirmnettopic">COM_ECFIRMNETTOPIC</menu>
 		</submenu>
 
 		<!-- Core files -->
-		<files folder="administrator/components/com_EcfirmNetTopic">
+		<files folder="administrator/components/com_ecfirmnettopic">
 			<filename>access.xml</filename>
 			<filename>config.xml</filename>
 			<filename>dispatcher.php</filename>
@@ -82,13 +82,13 @@
 			<folder>View</folder>
 		</files>
 		<languages folder="administrator/language">
-			<language tag="en-GB">en-GB/en-GB.com_EcfirmNetTopic.ini</language>
-			<language tag="en-GB">en-GB/en-GB.com_EcfirmNetTopic.sys.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_ecfirmnettopic.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_ecfirmnettopic.sys.ini</language>
 		</languages>
 	</administration>
 
 	<!-- Update servers -->
 	<updateservers>
-		<server type="extension" priority="1" name="EcfirmNetTopic">https://ecfirm.net/EcfirmNetTopic.xml</server>
+		<server type="extension" priority="1" name="ecfirmnettopic">https://ecfirm.net/EcfirmNetTopic.xml</server>
 	</updateservers>
 </extension>
