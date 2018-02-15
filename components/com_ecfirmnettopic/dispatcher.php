@@ -5,7 +5,9 @@
  * @license GNU General Public License version 2 or later.
  */
 
+use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Dispatcher\Dispatcher;
+use Joomla\Input\Input;
 
 defined('_JEXEC') or die;
 
@@ -20,4 +22,17 @@ class EcfirmNetTopicDispatcher extends Dispatcher
 	 * @since  4.0.0
 	 */
 	protected $namespace = 'Joomla\\Component\\EcfirmNetTopic';
+
+	/**
+	 * Constructor for Dispatcher
+	 * @param   CMSApplication  $app    The application instance
+	 * @param   Input           $input  The input instance
+	 * @since   4.0.0
+	 */
+	public function __construct(CMSApplication $app, Input $input = null)
+	{
+		parent::__construct($app, $input);
+
+		//EcConst::setPrefix('ecfirmnet');
+	}
 }
