@@ -5,4 +5,8 @@
  * @license GNU General Public License version 2 or later.
  */
 
+use Joomla\Component\EcfirmNetBase\Site\Helper\EcDebug;
+
 defined('_JEXEC') or die;
+
+EcDebug::lp($this->item);
