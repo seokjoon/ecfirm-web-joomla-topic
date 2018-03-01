@@ -7,9 +7,9 @@
 
 namespace Joomla\Component\EcfirmNetTopic\Administrator\View\Topics;
 
-defined('_JEXEC') or die;
-
 use Joomla\Component\EcfirmNetBase\Administrator\View\EcListAdminHtmlView;
+
+defined('_JEXEC') or die;
 
 class HtmlView extends EcListAdminHtmlView
 {
