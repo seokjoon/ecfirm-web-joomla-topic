@@ -23,7 +23,12 @@ class TopicsModel extends EcListAdminModel
 	{
 		parent::__construct($config);
 		if (empty($this->keywords))
-			$this->keywords = array();
+			$this->keywords = array(
+				'modified',
+				'order',
+				'search',
+				'topiccat',
+			);
 	}
 
 	/**
@@ -37,6 +42,8 @@ class TopicsModel extends EcListAdminModel
 		$query = $db->getQuery(true);
 		$query->select('t.*') //FIXME
 			->from('#__ec_topic as t');
+		$query->select('ju.username as username')
+			->join('INNER', '#__users as ju ON ju.id =t.user');
 
 		//EcDebug::lp($query->__toString());//$this->setError($query);
 		return $query;

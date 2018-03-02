@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `#__ec_topic` (
   KEY `idx_user` (`user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `#__ec_topic` (`title`, `body`) VALUES ('test title 1', 'test body 1');
+-- INSERT INTO `#__ec_topic` (`title`, `body`) VALUES ('test title 1', 'test body 1');
 
 
 
