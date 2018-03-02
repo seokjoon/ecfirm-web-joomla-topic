@@ -42,6 +42,7 @@
 
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.com_ecfirmnettopic.ini</language>
+		<language tag="ko-KR">ko-KR/ko-KR.com_ecfirmnettopic.ini</language>
 	</languages>
 
 	<!-- Front-end files -->
@@ -90,6 +91,8 @@
 		<languages folder="administrator/language">
 			<language tag="en-GB">en-GB/en-GB.com_ecfirmnettopic.ini</language>
 			<language tag="en-GB">en-GB/en-GB.com_ecfirmnettopic.sys.ini</language>
+			<language tag="ko-KR">ko-KR/ko-KR.com_ecfirmnettopic.ini</language>
+			<language tag="ko-KR">ko-KR/ko-KR.com_ecfirmnettopic.sys.ini</language>
 		</languages>
 	</administration>
 
