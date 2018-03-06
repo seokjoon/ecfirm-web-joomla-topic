@@ -76,7 +76,7 @@ $columns = 7; //FIXME
 								<?php echo HTMLHelper::_('grid.id', $i, $item->topic); ?>
 							</td>
 							<td class="">
-								<a href="<?php echo Route::_('index.php?option=com_ectopic&task=topic.edit&topic=').$item->topic; ?>" title="<?php echo Text::_('JACTION_EDIT'); ?>"><?php echo $item->title; ?></a>
+								<a href="<?php echo Route::_('index.php?option=com_ecfirmnettopic&task=topic.edit&topic=').$item->topic; ?>" title="<?php echo Text::_('JACTION_EDIT'); ?>"><?php echo $item->title; ?></a>
 							</td>
 							<td class="text-center">
 								<?php echo $item->username; ?>

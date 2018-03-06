@@ -27,4 +27,13 @@ class EcfirmNetTopicHelper extends EcAdminHelper
 		JHtmlSidebar::addEntry(Text::_('COM_ECTOPIC_SUBMENU_TOPICCATS'), 'index.php?option=com_ectopic&view=topiccats', $vName == 'topiccats');
 		JHtmlSidebar::addEntry(Text::_('COM_ECTOPIC_SUBMENU_TOPICS'), 'index.php?option=com_ectopic&view=topics', $vName == 'topics');
 	}
+
+	public static function getStateValues()
+	{
+		return array(
+			'0' => Text::_('COM_ECTOPIC_STATE_VALUE_SELECT'),
+			'-1' => Text::_('COM_ECTOPIC_STATE_VALUE_DISABLE'),
+			'1' => Text::_('COM_ECTOPIC_STATE_VALUE_ENABLE')
+		);
+	}
 }
