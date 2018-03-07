@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="Joomla\Component\EcfirmNetTopic\Administrator\Field">
+
+    <fieldset name="topiccat">
+        <field name="topiccat" type="text" readonly="true"
+            label="COM_ECTOPIC_TOPICCAT_TOPICCAT_LABEL"
+            description="COM_ECTOPIC_TOPICCAT_TOPICCAT_DESC" />
+        <field name="modified" type="calendar" size="22" default="NOW"
+            translateformat="true" showtime="true" filter="user_utc"
+            label="COM_ECTOPIC_TOPICCAT_MODIFIED_LABEL"
+            description="COM_ECTOPIC_TOPICCAT_MODIFIED_DESC" />
+        <field name="parent" type="hidden" default="0" />
+        <field name="asset_id" type="hidden" default="0" />
+        <field name="state" type="topiccatstate" default="1" filter="intval"
+            label="COM_ECTOPIC_TOPICCAT_STATE_LABEL"
+            description="COM_ECTOPIC_TOPICCAT_STATE_DESC" />
+        <field name="title" id="title" type="text" required="true"
+            class="input-xxlarge" maxlength="1024" filter="safehtml"
+            label="COM_ECTOPIC_TOPICCAT_TITLE_LABEL"
+            description="COM_ECTOPIC_TOPICCAT_TITLE_DESC"
+            hint="COM_ECTOPIC_TOPICCAT_TITLE_DESC" />
+        <field name="body" id="body" type="editor" class="" required="true"
+            buttons="false" filter="JComponentHelper::filterText"
+            label="COM_ECTOPIC_TOPICCAT_BODY_LABEL"
+            description="COM_ECTOPICCAT_TOPIC_BODY_DESC"
+            hint="COM_ECTOPIC_TOPICCAT_BODY_DESC" />
+    </fieldset>
+
+    <fieldset name="columns">
+        <field name="options" type="text" />
+    </fieldset>
+
+</form>

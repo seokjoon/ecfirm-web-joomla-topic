@@ -52,10 +52,7 @@ $columns = 7; //FIXME
 								<?php echo HTMLHelper::_('grid.checkall'); ?>
 							</th>
 							<th class="text-center">
-								<?php echo Text::_('COM_ECTOPIC_TOPICS_TITLE_HEADER'); ?>
-							</th>
-							<th class="text-center">
-								<?php echo Text::_('COM_ECTOPIC_TOPICS_USER_HEADER'); ?>
+								<?php echo Text::_('COM_ECTOPIC_TOPICCATS_TITLE_HEADER'); ?>
 							</th>
 						</tr>
 					</thead>
@@ -70,15 +67,12 @@ $columns = 7; //FIXME
 
 					<tbody>
 						<?php foreach ($this->items as $i => $item) : ?>
-						<tr class="row<?php echo ($i % 2)?>" sortable-group-id="<?php echo $item->topic; ?>">
+						<tr class="row<?php echo ($i % 2)?>" sortable-group-id="<?php echo $item->topiccat; ?>">
 							<td class="text-center">
-								<?php echo HTMLHelper::_('grid.id', $i, $item->topic); ?>
+								<?php echo HTMLHelper::_('grid.id', $i, $item->topiccat); ?>
 							</td>
 							<td class="">
-								<a href="<?php echo Route::_('index.php?option=com_ecfirmnettopic&task=topic.edit&topic=').$item->topic; ?>" title="<?php echo Text::_('JACTION_EDIT'); ?>"><?php echo $item->title; ?></a>
-							</td>
-							<td class="text-center">
-								<?php echo $item->username; ?>
+								<a href="<?php echo Route::_('index.php?option=com_ecfirmnettopic&task=topiccat.edit&topiccat=').$item->topiccat; ?>" title="<?php echo Text::_('JACTION_EDIT'); ?>"><?php echo $item->title; ?></a>
 							</td>
 						</tr>
 

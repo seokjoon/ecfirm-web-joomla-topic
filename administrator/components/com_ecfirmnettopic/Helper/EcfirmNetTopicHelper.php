@@ -24,8 +24,8 @@ class EcfirmNetTopicHelper extends EcAdminHelper
 	 */
 	public static function addSubmenu($vName)
 	{
-		JHtmlSidebar::addEntry(Text::_('COM_ECTOPIC_SUBMENU_TOPICCATS'), 'index.php?option=com_ectopic&view=topiccats', $vName == 'topiccats');
-		JHtmlSidebar::addEntry(Text::_('COM_ECTOPIC_SUBMENU_TOPICS'), 'index.php?option=com_ectopic&view=topics', $vName == 'topics');
+		JHtmlSidebar::addEntry(Text::_('COM_ECTOPIC_SUBMENU_TOPICCATS'), 'index.php?option=com_ecfirmnettopic&view=topiccats', $vName == 'topiccats');
+		JHtmlSidebar::addEntry(Text::_('COM_ECTOPIC_SUBMENU_TOPICS'), 'index.php?option=com_ecfirmnettopic&view=topics', $vName == 'topics');
 	}
 
 	public static function getStateValues()

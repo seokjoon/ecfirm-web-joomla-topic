@@ -7,8 +7,11 @@
 
 namespace Joomla\Component\EcfirmNetTopic\Administrator\Controller;
 
-use Joomla\Component\EcfirmNetBase\Administrator\Controller\EcListAdminController;
+use Joomla\Component\EcfirmNetBase\Administrator\Controller\EcItemAdminController;
 
-class TopicsController extends EcListAdminController
+defined('_JEXEC') or die;
+
+
+class TopiccatController extends EcItemAdminController
 {
 }

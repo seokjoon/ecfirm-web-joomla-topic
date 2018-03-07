@@ -9,6 +9,6 @@ namespace Joomla\Component\EcfirmNetTopic\Administrator\Controller;
 
 use Joomla\Component\EcfirmNetBase\Administrator\Controller\EcListAdminController;
 
-class TopicsController extends EcListAdminController
+class TopiccatsController extends EcListAdminController
 {
 }
