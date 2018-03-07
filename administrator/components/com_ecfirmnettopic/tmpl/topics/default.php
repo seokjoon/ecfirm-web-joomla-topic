@@ -14,9 +14,8 @@ use Joomla\Component\EcfirmNetBase\Site\Helper\EcDebug;
 
 defined('_JEXEC') or die;
 
-//HTMLHelper::_('bootstrap.tooltip');
 HTMLHelper::_('behavior.multiselect');
-HTMLHelper::_('formbehavior.chosen', 'select');
+//HTMLHelper::_('behavior.tabstate');
 
 $urlForm = Route::_(Uri::getInstance());
 

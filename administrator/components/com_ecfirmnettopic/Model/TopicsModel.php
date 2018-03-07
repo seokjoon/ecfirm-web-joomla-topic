@@ -24,8 +24,8 @@ class TopicsModel extends EcListAdminModel
 		parent::__construct($config);
 		if (empty($this->keywords))
 			$this->keywords = array(
+				'fullordering',
 				'modified',
-				'order',
 				'search',
 				'topiccat',
 			);
@@ -41,7 +41,9 @@ class TopicsModel extends EcListAdminModel
 		$db = $this->getDbo();
 		$query = $db->getQuery(true);
 		$query->select('t.*') //FIXME
-			->from('#__ec_topic as t');
+			->from('#__ec_topic as t')
+			->order('t.topic DESC');
+
 		$query->select('ju.username as username')
 			->join('INNER', '#__users as ju ON ju.id =t.user');
 

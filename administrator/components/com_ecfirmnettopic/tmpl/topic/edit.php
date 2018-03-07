@@ -36,8 +36,10 @@ $urlForm = Route::_('index.php?option=com_ecfirmnettopic&layout=edit&topic=' . (
 			<?php echo HTMLHelper::_('bootstrap.addTab', 'myTab', 'topic', Text::_('COM_ECTOPIC_TOPIC_TOPIC')); ?>
 			<div class="row">
 				<div class="col-md-9">
-					<?php echo $this->form->getLabel('body'); ?>
-					<?php echo $this->form->getInput('body'); ?>
+					<fieldset class="adminform">
+						<?php //echo $this->form->getLabel('body'); ?>
+						<?php echo $this->form->getInput('body'); ?>
+					</fieldset>
 				</div>
 				<div class="col-md-3">
 					<div class="card card-light">
