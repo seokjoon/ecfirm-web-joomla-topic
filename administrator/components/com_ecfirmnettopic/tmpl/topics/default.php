@@ -21,7 +21,8 @@ $urlForm = Route::_(Uri::getInstance());
 
 $columns = 7; //FIXME
 
-//EcDebug::lp($this->items);
+//EcDebug::lp($this->filterForm);
+//EcDebug::lp($this->items[0]);
 ?>
 
 
@@ -61,11 +62,11 @@ $columns = 7; //FIXME
 					</thead>
 
 					<tfoot>
-					<tr>
-						<td colspan="<?php echo $columns; ?>">
-							<?php echo $this->pagination->getListFooter(); ?>
-						</td>
-					</tr>
+						<tr>
+							<td colspan="<?php echo $columns; ?>">
+								<?php echo $this->pagination->getListFooter(); ?>
+							</td>
+						</tr>
 					</tfoot>
 
 					<tbody>

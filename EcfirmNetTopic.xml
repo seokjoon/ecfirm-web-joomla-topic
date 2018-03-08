@@ -52,7 +52,9 @@
 		<filename>dispatcher.php</filename>
 		<folder>Controller</folder>
 		<folder>forms</folder>
+        <folder>Helper</folder>
 		<folder>helpers</folder>
+		<folder>layouts</folder>
 		<folder>Model</folder>
 		<folder>Rule</folder>
 		<folder>tmpl</folder>
