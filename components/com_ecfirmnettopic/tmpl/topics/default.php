@@ -5,7 +5,6 @@
  * @license GNU General Public License version 2 or later.
  */
 
-use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
@@ -18,10 +17,15 @@ defined('_JEXEC') or die;
 HTMLHelper::_('behavior.multiselect');
 //HTMLHelper::_('behavior.tabstate');
 
+HTMLHelper::_('stylesheet', '/media/com_ecfirmnettopic/css/admin.css', ['version' => 'auto']);
+
 $urlForm = Route::_(Uri::getInstance());
 
-//EcDebug::lp($this->filterForm);
+$columns = 7; //FIXME
+
 //EcDebug::lp($this->items[0]);
+//EcDebug::lp($this->filterForm);
+//EcDebug::lp($this->pagination);
 ?>
 
 
@@ -34,10 +38,7 @@ $urlForm = Route::_(Uri::getInstance());
 
 			<div id="j-main-container" class="j-main-container">
 
-				<?php echo LayoutHelper::render('joomla.searchtools.ecfirmnettopic.topics', array('view' => $this)); ?>
-				<?php //echo LayoutHelper::render('joomla.searchtools.default.list', array('view' => $this)); ?>
-
-				<?php //echo LayoutHelper::render('joomla.searchtools.default', array('view' => $this)); ?>
+				<?php echo LayoutHelper::render('joomla.searchtools.default', array('view' => $this)); ?>
 
 				<?php if (empty($this->items)) : ?>
 				<joomla-alert type="warning">

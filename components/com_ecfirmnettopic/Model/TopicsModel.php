@@ -44,24 +44,11 @@ class TopicsModel extends EcListModel
 		$query->select('ju.username as username')
 			->join('INNER', '#__users as ju ON ju.id =t.user');
 
-
 		$search = $this->getState('filter.search');
 		if (!(empty($search)))
 			$query->where('(t.title LIKE ' . $db->quote('%' . $search . '%') . ' OR t.body LIKE ' . $db->quote('%' . $search . '%') . ')');
 
 		//EcDebug::lp($query->__toString());//$this->setError($query);
 		return $query;
-	}
-
-	public function getState($property = null, $default = null)
-	{
-		//EcDebug::lp(intval($this->__state_set));
-
-		return parent::getState($property, $default);
-	}
-
-	protected function populateState($ordering = null, $direction = null)
-	{
-		return parent::populateState($ordering, $direction);
 	}
 }

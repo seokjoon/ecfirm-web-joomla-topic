@@ -21,8 +21,9 @@ $urlForm = Route::_(Uri::getInstance());
 
 $columns = 7; //FIXME
 
-//EcDebug::lp($this->filterForm);
 //EcDebug::lp($this->items[0]);
+//EcDebug::lp($this->filterForm);
+//EcDebug::lp($this->pagination);
 ?>
 
 
