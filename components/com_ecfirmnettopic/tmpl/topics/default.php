@@ -46,7 +46,8 @@ $columns = 7; //FIXME
 				</joomla-alert>
 
 				<?php else : ?>
-				<table class="table table-striped" id="categoryList">
+				<!-- table class="table table-striped" id="categoryList" -->
+				<table class="category table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
 							<th class="text-center">
@@ -61,7 +62,13 @@ $columns = 7; //FIXME
 					<tfoot>
 						<tr>
 							<td colspan="<?php echo $columns; ?>">
-								<?php echo $this->pagination->getListFooter(); ?>
+								<div class="w-100">
+									<p class="counter float-right pt-3 pr-2">
+										<?php echo $this->pagination->getPagesCounter(); ?>
+									</p>
+									<?php echo $this->pagination->getPagesLinks(); ?>
+								</div>
+								<?php //echo $this->pagination->getListFooter(); ?>
 							</td>
 						</tr>
 					</tfoot>
