@@ -10,6 +10,7 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
+use Joomla\Component\EcfirmNetBase\Site\Helper\EcDatetime;
 use Joomla\Component\EcfirmNetBase\Site\Helper\EcDebug;
 
 defined('_JEXEC') or die;
@@ -23,8 +24,11 @@ $urlForm = Route::_(Uri::getInstance());
 
 $columns = 7; //FIXME
 
+$nameKey = $this->nameKey;
+$optionCom = $this->optionCom;
 $topiccatTitle = JHtml::_('string.truncateComplex', $this->topiccatTitle, 70);
 $topiccatBody = nl2br($this->topiccatBody);
+$sept = '&nbsp;&middot;&nbsp;';
 
 //EcDebug::lp($this->items[0]);
 //EcDebug::lp($this->filterForm);
@@ -38,15 +42,15 @@ $topiccatBody = nl2br($this->topiccatBody);
 
 	<div class="row">
 		<div class="col-md-12">
-		<div class="float-left">
-			<fieldset>
-				<legend><?php echo $topiccatTitle; ?></legend>
-				<small><?php echo $topiccatBody; ?></small>
-			</fieldset>
-		</div>
-		<div class="float-right">
-			TODO BTN ADD
-		</div>
+			<div class="float-left">
+				<h3>
+					<?php echo $topiccatTitle; ?>
+					<small> <?php echo $topiccatBody; ?> </small>
+				</h3>
+			</div>
+			<div class="float-right">
+				<a class="btn btn-secondary" href="#" role="button">TODO ADD</a>
+			</div>
 		</div>
 	</div>
 
@@ -97,13 +101,32 @@ $topiccatBody = nl2br($this->topiccatBody);
 
 					<tbody>
 					<?php foreach ($this->items as $i => $item) : ?>
+						<?php
+						$title = HTMLHelper::_('string.truncateComplex', $item->title, 70, false);
+						$title = '<a href="' . Route::_('index.php?option=' . $optionCom . '&view=' . $nameKey . '&topic=' . $item->topic) . '"><div>' . $title . '</div></a>';
+						$datetime = EcDatetime::interval($item->created);
+						if($item->created < $item->modified)
+							$datetime = $datetime . $seperator . EcDatetime::interval($item->modified);
+						$username = '<a href="' . Route::_('index.php?option=com_ecuser&view=user&user=' .$item->user).'">'.$item->username.'</a>';
+						$hits = Text::sprintf('COM_ECTOPIC_TOPIC_HITS_NUMBER', $item->hits);
+
+						$topiccmt = ($item->topiccmt > 0) ? $sept . Text::sprintf('COM_ECTOPIC_TOPIC_TOPICCMT_NUMBER', $item->topiccmt) : null;
+						$topiclike = ($item->topiclike) ? $sept . Text::sprintf('COM_ECTOPIC_TOPIC_TOPICLIKE_NUMBER', $item->topiclike) : null;
+						$files = json_decode($item->files, true); //EcDebug::lp(count($files));
+						$imgs = json_decode($item->imgs, true); //EcDebug::lp(count($imgs));
+						$countFile = count($files);
+						$countImg = (count($imgs))/2;
+						$existFile =  (($countFile > 0) && (array_key_exists('file', $files)) && (!empty($files['file'])));
+						$existImg =  (($countImg > 0) && (array_key_exists('img', $imgs)) && (!empty($imgs['img'])));
+						$numberFile = ($existFile) ? $sept . Text::sprintf('COM_ECTOPIC_TOPIC_FILE_NUMBER', $countFile) : null;
+						$numberImg = ($existImg) ? $sept . Text::sprintf('COM_ECTOPIC_TOPIC_IMG_NUMBER', $countImg) : null;
+						?>
 						<tr class="row<?php echo ($i % 2)?>" sortable-group-id="<?php echo $item->topic; ?>">
 							<td class="">
-								<a href="<?php echo Route::_('index.php?option=com_ecfirmnettopic&view=topic&topic=') . $item->topic; ?>" title="<?php echo Text::_('JACTION_EDIT'); ?>"><div><?php echo $item->title; ?></div></a>
+								<div><?php echo $title; ?></div>
+								<div><small><?php echo $datetime . $sept . $hits . $topiccmt . $topiclike . $numberFile . $numberImg; ?></small></div>
 							</td>
-							<td class="text-center">
-								<?php echo $item->username; ?>
-							</td>
+							<td class="text-center"><?php echo $username; ?></td>
 						</tr>
 
 					<?php endforeach; ?>

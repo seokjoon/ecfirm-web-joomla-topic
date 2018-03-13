@@ -13,4 +13,11 @@ use Joomla\Component\EcfirmNetBase\Site\View\EcItemHtmlView;
 
 class HtmlView extends EcItemHtmlView
 {
+
+	protected function getItem($valueKey = 0)
+	{
+		$model = $this->getModel($this->getName());
+		$model->setState('enabledPlugin', true);
+		return parent::getItem($valueKey);
+	}
 }
