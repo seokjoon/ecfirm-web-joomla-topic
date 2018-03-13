@@ -23,6 +23,9 @@ $urlForm = Route::_(Uri::getInstance());
 
 $columns = 7; //FIXME
 
+$topiccatTitle = JHtml::_('string.truncateComplex', $this->topiccatTitle, 70);
+$topiccatBody = nl2br($this->topiccatBody);
+
 //EcDebug::lp($this->items[0]);
 //EcDebug::lp($this->filterForm);
 //EcDebug::lp($this->pagination);
@@ -30,15 +33,34 @@ $columns = 7; //FIXME
 
 
 
-<div>
-<form action="<?php echo $urlForm; ?>" method="post" name="adminForm" id="adminForm">
+<div class="container">
+
+
 	<div class="row">
+		<div class="col-md-12">
+		<div class="float-left">
+			<fieldset>
+				<legend><?php echo $topiccatTitle; ?></legend>
+				<small><?php echo $topiccatBody; ?></small>
+			</fieldset>
+		</div>
+		<div class="float-right">
+			TODO BTN ADD
+		</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+	<form action="<?php echo $urlForm; ?>" method="post" name="adminForm" id="adminForm">
 
 		<div class="col-md-12">
 
 			<div id="j-main-container" class="j-main-container">
 
-				<?php echo LayoutHelper::render('joomla.searchtools.default', array('view' => $this)); ?>
+				<div class="float-right m-2 p-2">
+					<?php echo LayoutHelper::render('joomla.searchtools.default', array('view' => $this)); ?>
+				</div>
 
 				<?php if (empty($this->items)) : ?>
 				<joomla-alert type="warning">
@@ -50,10 +72,10 @@ $columns = 7; //FIXME
 				<table class="category table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
-							<th class="text-center">
+							<th class="text-center col-9">
 								<?php echo Text::_('COM_ECTOPIC_TOPICS_TITLE_HEADER'); ?>
 							</th>
-							<th class="text-center">
+							<th class="text-center col-3">
 								<?php echo Text::_('COM_ECTOPIC_TOPICS_USER_HEADER'); ?>
 							</th>
 						</tr>
@@ -77,7 +99,7 @@ $columns = 7; //FIXME
 					<?php foreach ($this->items as $i => $item) : ?>
 						<tr class="row<?php echo ($i % 2)?>" sortable-group-id="<?php echo $item->topic; ?>">
 							<td class="">
-								<a href="<?php echo Route::_('index.php?option=com_ecfirmnettopic&task=topic.edit&topic=') . $item->topic; ?>" title="<?php echo Text::_('JACTION_EDIT'); ?>"><?php echo $item->title; ?></a>
+								<a href="<?php echo Route::_('index.php?option=com_ecfirmnettopic&view=topic&topic=') . $item->topic; ?>" title="<?php echo Text::_('JACTION_EDIT'); ?>"><div><?php echo $item->title; ?></div></a>
 							</td>
 							<td class="text-center">
 								<?php echo $item->username; ?>
@@ -96,6 +118,8 @@ $columns = 7; //FIXME
 
 			</div>
 		</div>
+	</form>
 	</div>
-</form>
+
+
 </div>

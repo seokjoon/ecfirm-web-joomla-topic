@@ -28,7 +28,6 @@ class HtmlView extends EcListHtmlView
 		$items = $model->getItems();
 
 		$this->filterForm = $this->get('FilterForm'); //@IMPORTANT: filter call sequence
-		//$this->activeFilters = $this->get('ActiveFilters');
 
 		return $items;
 	}
