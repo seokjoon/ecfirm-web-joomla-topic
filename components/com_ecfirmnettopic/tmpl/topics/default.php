@@ -56,9 +56,7 @@ $sept = '&nbsp;&middot;&nbsp;';
 
 
 	<div class="row">
-	<form action="<?php echo $urlForm; ?>" method="post" name="adminForm" id="adminForm">
-
-		<div class="col-md-12">
+		<form action="<?php echo $urlForm; ?>" method="post" name="adminForm" id="adminForm" class="col-md-12">
 
 			<div id="j-main-container" class="j-main-container">
 
@@ -72,7 +70,6 @@ $sept = '&nbsp;&middot;&nbsp;';
 				</joomla-alert>
 
 				<?php else : ?>
-				<!-- table class="table table-striped" id="categoryList" -->
 				<table class="category table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
@@ -140,8 +137,8 @@ $sept = '&nbsp;&middot;&nbsp;';
 				<?php echo HTMLHelper::_('form.token'); ?>
 
 			</div>
-		</div>
-	</form>
+
+		</form>
 	</div>
 
 
